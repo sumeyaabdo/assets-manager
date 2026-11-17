@@ -75,7 +75,8 @@ public class Vehicle extends Asset{
 
             value = value.multiply(new BigDecimal("0.75"));
 
-            return value;
         }
+
+        return value;
     }
 }
