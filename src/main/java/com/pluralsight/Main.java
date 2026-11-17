@@ -45,5 +45,17 @@ public class Main {
         );
 
         myAssets.add(myCar);
+
+        // Add my second vehicle
+        Vehicle myTruck = new Vehicle(
+                "Tom's Truck",
+                "2020-03-20",
+                new BigDecimal("35000.00"),
+                "Ford F-150",
+                2020,
+                120000
+        );
+
+        myAssets.add(myTruck);
     }
 }
