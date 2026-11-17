@@ -20,5 +20,18 @@ public class Main {
         );
 
         myAssets.add(myHouse);
+
+        // Add my vacation house
+        House vacationHouse = new House(
+                "My Vacation House",
+                "2024-08-10",
+                new BigDecimal("180000.00"),
+                "456 Lake View Drive",
+                2,
+                1500,
+                4000
+        );
+
+        myAssets.add(vacationHouse);
     }
 }
