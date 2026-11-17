@@ -57,5 +57,24 @@ public class Main {
         );
 
         myAssets.add(myTruck);
+
+        // Display all assets and their values
+        for (Asset asset : myAssets) {
+            System.out.println("--------------------");
+            System.out.println("Description: " + asset.getDescription());
+            System.out.println("Date Acquired: " + asset.getDateAcquired());
+            System.out.println("Original Cost: $" + asset.getOriginalCost());
+            System.out.println("Current Value: $" + asset.getValue());
+
+            // Check the asset type and display its specific details
+            if (asset instanceof House) {
+                House house = (House) asset;
+                System.out.println("House Address: " + house.getAddress());
+
+            } else if (asset instanceof Vehicle) {
+                Vehicle vehicle = (Vehicle) asset;
+                System.out.println("Vehicle: " + vehicle.getYear() + " " + vehicle.getMakeModel());
+            }
+        }
     }
 }
