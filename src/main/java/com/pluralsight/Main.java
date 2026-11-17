@@ -74,6 +74,7 @@ public class Main {
             } else if (asset instanceof Vehicle) {
                 Vehicle vehicle = (Vehicle) asset;
                 System.out.println("Vehicle: " + vehicle.getYear() + " " + vehicle.getMakeModel());
+
             }
         }
     }
