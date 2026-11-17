@@ -6,6 +6,13 @@ public class Asset {
     private String dateAcquired;
     private BigDecimal originalCost;
 
+    public Asset(String description, String dateAcquired, BigDecimal originalCost) {
+        this.description = description;
+        this.dateAcquired = dateAcquired;
+        this.originalCost = originalCost;
+
+    }
+
     public String getDescription() {
         return description;
     }
@@ -30,10 +37,8 @@ public class Asset {
         this.originalCost = originalCost;
     }
 
-    public Asset(String description, String dateAcquired, BigDecimal originalCost) {
-        this.description = description;
-        this.dateAcquired = dateAcquired;
-        this.originalCost = originalCost;
-
+    public BigDecimal getValue() {
+        return originalCost;
     }
+
 }
