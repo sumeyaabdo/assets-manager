@@ -49,5 +49,8 @@ public class House extends Asset {
         this.lotSize = lotSize;
     }
 
-
+    @Override
+    public BigDecimal getValue() {
+        return super.getValue();
+    }
 }
