@@ -33,5 +33,17 @@ public class Main {
         );
 
         myAssets.add(vacationHouse);
+
+        // Add my first vehicle
+        Vehicle myCar = new Vehicle(
+                "My Car",
+                "2022-05-15",
+                new BigDecimal("25000.00"),
+                "Toyota Camry",
+                2022,
+                65000
+        );
+
+        myAssets.add(myCar);
     }
 }
