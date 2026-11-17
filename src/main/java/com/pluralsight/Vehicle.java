@@ -40,6 +40,42 @@ public class Vehicle extends Asset{
 
     @Override
     public BigDecimal getValue() {
-        return super.getValue();
+        // Calculate the vehicle's age
+        int currentYear = java.time.LocalDate.now().getYear();
+        int age = currentYear - year;
+
+        // Calculate vehicle value based on age
+        BigDecimal value;
+
+        if (age > 10) {
+            value = new BigDecimal("1000.00");
+        } else {
+            BigDecimal depreciationRate;
+
+            if (age <= 3) {
+                depreciationRate = new BigDecimal("0.03");
+            } else if (age <= 6) {
+                depreciationRate = new BigDecimal("0.06");
+            } else {
+                depreciationRate = new BigDecimal("0.08");
+            }
+
+            // Subtract depreciation from the original cost
+            BigDecimal depreciation = getOriginalCost()
+                    .multiply(depreciationRate)
+                    .multiply(BigDecimal.valueOf(age));
+
+            value = getOriginalCost().subtract(depreciation);
+        }
+
+        // Reduce value by 25% for high mileage, except Honda and Toyota
+        if (odometer > 100000
+                && !makeModel.toLowerCase().contains("honda")
+                && !makeModel.toLowerCase().contains("toyota")) {
+
+            value = value.multiply(new BigDecimal("0.75"));
+
+            return value;
+        }
     }
 }
